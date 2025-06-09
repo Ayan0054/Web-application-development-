@@ -1,0 +1,68 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+  <div class="container">
+    <h2>User Registration Form</h2>
+    <form id="regForm">
+      <div class="mb-3">
+        <label>Name:</label>
+        <input type="text" id="name" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label>Email:</label>
+        <input type="email" id="email" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label>Password:</label>
+        <input type="password" id="password" class="form-control" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+    <br />
+    <a href="userlist.html" class="btn btn-success">View All Users</a>
+  </div>
+
+  <script>
+    // Listen for form submit
+    document.getElementById("regForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Get user input values
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Create user object
+      const user = { name, email, password };
+
+      // --- Store in localStorage ---
+      let users = JSON.parse(localStorage.getItem("users")) || []; // Get existing or empty
+      users.push(user); // Add new user
+      localStorage.setItem("users", JSON.stringify(users)); // Save updated list
+
+      // --- Simulate AJAX POST ---
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://example.com/api/register"); // This URL is just dummy
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onload = function () {
+        if (xhr.status === 200 || xhr.status === 201) {
+          alert("User registered successfully!");
+        }
+      };
+      xhr.onerror = function () {
+        alert("AJAX failed, but data saved to localStorage.");
+      };
+      xhr.send(JSON.stringify(user)); // Send user data to server (simulation)
+
+      // Clear form
+      document.getElementById("regForm").reset();
+    });
+  </script>
+</body>
+</html>

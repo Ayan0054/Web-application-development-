@@ -1,0 +1,75 @@
+** Links:
+Visual Studio Code Download Link : https://bit.ly/3yJZNJd
+Git Download Link : https://bit.ly/3wFy5uI
+Github Account Creation Link : https://bit.ly/3wFTLqm
+
+** Commands To Execute In Visual Studio Code Terminal:
+For Pushing First File:
+  1. git --version
+  2. git init
+  3. git add .
+  4. git status
+  5. git remote add origin "link of your github repository"
+  6. git commit -m "any message"
+  7. If Prompted to authenticate the user, execute following commands:
+   7.1 git config --global user.email "your git hub email id"
+     7.2 git config --global user.name "Your git hub user name"
+    8. git push -u origin master
+    9. git status
+    Now, check your github repository (refresh the page) whether the file is pushed or not.
+
+For Pushing Second File:
+  1. git add .
+  2. git status
+  3. git commit -m "any message"
+  4. git push -u origin master
+    5. git status
+    Now, check your github repository (refresh the page)  whether the file is pushed or not.
+
+** Some Basic Questions That Can Be Asked:
+ 1. What is GitHub?
+GitHub is a cloud-based platform that helps developers store, manage, track, and control changes to their code using Git. It also allows for collaboration, version control, and project sharing with others.
+
+✅ 2. What is the use of GitHub?
+GitHub is used for:
+
+Storing code in the cloud
+
+Tracking changes in code over time
+
+Collaborating with others on projects
+
+Managing open-source contributions
+
+Creating backups of code
+
+Integrating with CI/CD tools for automation
+
+✅ 3. What is the use of Git commands?
+Command	Use
+git init	Initializes a new Git repository in your project folder
+git status	Shows the status of your files (modified, untracked, staged, etc.)
+git add .	Adds all modified/untracked files to the staging area
+git commit -m "msg"	Saves changes to local repository with a message
+git push	Uploads local commits to the remote GitHub repository
+
+✅ 4. Explain the steps to push your code to GitHub from Visual Studio Code terminal
+🧭 Step-by-step process:
+
+Open VS Code and load your project.
+
+Open the Terminal from the top menu:
+Terminal > New Terminal
+
+Run the following commands one by one:
+
+bash
+Copy
+Edit
+git init                        # Step 1: Initialize Git in your project
+git add .                       # Step 2: Stage all changes
+git commit -m "Initial commit"  # Step 3: Commit with message
+git branch -M main              # Step 4: Rename branch to main (optional)
+git remote add origin https://github.com/username/repo-name.git  # Step 5: Link to GitHub repo
+git push -u origin main         # Step 6: Push code to GitHub
+💡 Replace https://github.com/username/repo-name.git with your actual repository URL.

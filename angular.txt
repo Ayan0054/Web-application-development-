@@ -1,0 +1,72 @@
+** Links:
+Visual Studio Code Download Link : https://bit.ly/3Nzh6RD
+Node.js Download Link : https://bit.ly/3ailfen
+
+
+** Commands To Execute In Terminal:
+ 1. npm --version     - It is used to check the version of nodejs 
+ 2. npm install @angular/cli@latest  - It is used to install angular cli
+ 3. ng new project_name      - It is used to create new angular project
+
+file name= app.component.html
+
+<h1>{{title}}</h1>
+
+
+<input type="text" #name placeholder="enter name " name="name "> <br>
+<input type="text" #address placeholder="enter address " name="address "><br>
+<input type="text" #contact placeholder="enter contact " name="contact "><br>
+<input type="email" #email placeholder="enter email " name="email "><br>
+<input type="password" #password placeholder="enter password " name="password "><br>
+
+<button (click)="getValue(name.value, address.value, contact.value, email.value)"> Register </button><br>
+
+<h1> Registerition data </h1>
+
+<p> name: {{displayname}}</p>
+<p> address: {{displayaddress}}</p>
+<p> contact: {{displaycontact}}</p>
+<p> email: {{displayemail}}</p>
+
+
+file name= app.component.ts
+
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'Registeration Form';
+
+  displayname='';
+  displayaddress='';
+  displaycontact='';
+  displayemail='';
+
+  getValue(name:string, address:string, contact:string, email:string){
+    this.displayname=name;
+    this.displayaddress=address;
+    this.displaycontact=contact;
+    this.displayemail=email;
+    
+  }
+
+}
+
+
+
+ 4. ng serve        - It is used to compile the code (Make sure you are in correct directory before executing this command)
+ 
+ Then copy the localhost address with port and paste it in your browser (if it not redirected automatically to your default browser).
+
+
+** Some Basic Questions That Can Be Asked:
+ 1. What is AngularJS?
+ 2. What are the features of AngularJS?
+ 3. Which commands have you used to implement this assignment? 
+ 4. Explain the code that you have written.
